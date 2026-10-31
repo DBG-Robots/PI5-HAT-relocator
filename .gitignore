@@ -14,3 +14,6 @@ fp-info-cache
 *.log
 .history/
 .DS_Store
+
+# Fabrication Toolkit plugin settings
+fabrication-toolkit-options.json
