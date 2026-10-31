@@ -1,5 +1,7 @@
 # PI5-HAT-relocator
 
+[![English](https://img.shields.io/badge/English-selected-blue)](README.md) [![Deutsch](https://img.shields.io/badge/Deutsch-wechseln-lightgrey)](README.de.md)
+
 A simple, shallow KiCad board that lets the Kinematics Kit HAT fit into a narrow robot frame: female connectors on top, male connectors on bottom.
 
 ![3D render of the PI5-HAT-relocator board](images/board-3d.png)
