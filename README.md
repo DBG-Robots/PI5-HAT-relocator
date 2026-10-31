@@ -11,7 +11,7 @@ Our robot uses the **Kinematics Kit** by Eduard as its motor and drive electroni
 ## The problem
 
 - **30 cm width limit.** This is the main constraint we are fighting. Everything, including the connectors that stick out of the kit, has to fit inside it.
-- **Very shallow frame.** Our rocker-bogie suspension is mounted on the **sides** of the robot. Most other robots in the league put the suspension *below* the electronics enclosure, which raises the center of mass. We chose the side-mounted layout for a lower center of mass, but it leaves a much narrower and shallower space for the electronics.
+- **Very shallow frame.** Our double wishbone suspension (3 wheels per side) is mounted on the **sides** of the robot. Most other robots in the league put the suspension *below* the electronics enclosure, which raises the center of mass. We chose the side-mounted layout for a lower center of mass, but it leaves a much narrower and shallower space for the electronics.
 
 ## The solution
 
