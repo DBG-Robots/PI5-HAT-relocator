@@ -33,7 +33,7 @@ The board is intentionally simple:
 
 The board passes through 16 pins (8 two-pin connectors on top, 8 on the bottom). Per motor channel (1 and 2) these are `CH`, `CL`, `EN`, `VCC1`, `VCC2`, plus `GND`.
 
-Only **4 of the 8 connectors** matter electrically, among them one `VCC`, one `EN` and one CAN connector (`CH`/`CL`). [snaens](https://github.com/snaens) confirmed this to us. `VCC` only carries the Raspberry Pi's current, not motor current: power management sits at the top of the stack and passes motor power down only as far as the motor controllers, not through this board.
+Only **3 of the 8 connectors** matter electrically: one `VCC`, one `EN` and one CAN connector (`CH`/`CL`). [snaens](https://github.com/snaens) confirmed this to us. `VCC` only carries the Raspberry Pi's current, not motor current: power management sits at the top of the stack and passes motor power down only as far as the motor controllers, not through this board.
 
 We still pass all 16 pins through and populate every connector:
 

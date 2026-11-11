@@ -33,7 +33,7 @@ Die Platine ist bewusst einfach gehalten:
 
 Die Platine führt 16 Pins durch (8 zweipolige Leisten oben, 8 unten). Pro Motorkanal (1 und 2) sind das `CH`, `CL`, `EN`, `VCC1`, `VCC2` und dazu `GND`.
 
-Elektrisch wichtig sind nur **4 der 8 Leisten**, darunter eine `VCC`-, eine `EN`- und eine CAN-Leiste (`CH`/`CL`). Das hat uns [snaens](https://github.com/snaens) bestätigt. Über `VCC` fließt nur der Strom für den Raspberry Pi, nicht der Motorstrom: Das Power-Management sitzt ganz oben im Stapel und reicht den Motorstrom nur bis zu den Motorcontrollern durch, nicht durch diese Platine.
+Elektrisch wichtig sind nur **3 der 8 Leisten**: eine `VCC`-, eine `EN`- und eine CAN-Leiste (`CH`/`CL`). Das hat uns [snaens](https://github.com/snaens) bestätigt. Über `VCC` fließt nur der Strom für den Raspberry Pi, nicht der Motorstrom: Das Power-Management sitzt ganz oben im Stapel und reicht den Motorstrom nur bis zu den Motorcontrollern durch, nicht durch diese Platine.
 
 Wir führen trotzdem alle 16 Pins durch und bestücken alle Leisten:
 
