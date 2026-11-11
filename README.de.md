@@ -8,7 +8,7 @@ Eine einfache, flache KiCad-Platine, mit der das Kinematics-Kit-HAT in einen sch
 
 ## Hintergrund
 
-Unser Roboter nutzt das **[Kinematics Kit Kim](https://www.eduart-robotik.com/products/kinematicskit-kim)** von EduArt Robotik (Hersteller des Roboters Eduard) als Motor- und Antriebselektronik. Im Originallayout ragen die Motoranschlüsse **seitlich** aus dem HAT heraus. Für die meisten Aufbauten ist das unproblematisch, es kostet aber Breite, und genau die haben wir nicht.
+Unser Roboter nutzt das **Kinematics Kit** von EduArt Robotik in der Variante mit Raspberry-Pi-HAT (wie im Roboter Eduard) als Motor- und Antriebselektronik. Dieselben Module gibt es als [Kinematics Kit Kim](https://www.eduart-robotik.com/products/kinematicskit-kim), dort mit einer reinen Ethernet-Platine statt des Pi-HATs. Im Originallayout ragen die Motoranschlüsse **seitlich** aus dem HAT heraus. Für die meisten Aufbauten ist das unproblematisch, es kostet aber Breite, und genau die haben wir nicht.
 
 ## Das Problem
 
@@ -19,7 +19,7 @@ Unser Roboter nutzt das **[Kinematics Kit Kim](https://www.eduart-robotik.com/pr
 
 Diese Platine verlegt die Anschlüsse des HATs. Indem der obere Teil des Kinematics-Kit-HATs um **90°** gedreht wird, liegen die Motoranschlüsse nicht mehr seitlich abstehend, sodass das **komplette Kinematics Kit vollständig in unseren Rahmen passt**, und zwar innerhalb des 30-cm-Breitenlimits und mit dem flachen Profil, das wir brauchen.
 
-<img src="images/kim-stack-render.jpg" alt="3D-Rendering des Kinematics-Kit-Stapels auf einem Raspberry Pi 5 mit dem PI5-HAT-relocator zwischen Adapterplatine und Motor-Shields" width="600">
+<img src="images/kinematics-kit-stack-render.jpg" alt="3D-Rendering des Kinematics-Kit-Stapels auf einem Raspberry Pi 5 mit dem PI5-HAT-relocator zwischen Adapterplatine und Motor-Shields" width="600">
 
 *Der Stapel auf dem Raspberry Pi 5: unten die Adapterplatine, darauf der Relocator (die glatte Platine ohne Bauteile), darüber um 90° gedreht die Motor-Shields, ganz oben das Power-Management.*
 
@@ -62,4 +62,4 @@ KiCad 10.0.3, Stand 11.11.2026:
 ## Credits
 
 Entwickelt von DBG-Robots, Merlin Ortner (Dietrich-Bonhoeffer-Gymnasium Oberasbach).
-[Kinematics Kit Kim](https://www.eduart-robotik.com/products/kinematicskit-kim) von EduArt Robotik.
+Kinematics Kit von EduArt Robotik ([Kinematics Kit Kim](https://www.eduart-robotik.com/products/kinematicskit-kim) ist die Variante mit Ethernet-Platine).

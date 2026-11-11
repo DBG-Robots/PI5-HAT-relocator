@@ -8,7 +8,7 @@ A simple, shallow KiCad board that lets the Kinematics Kit HAT fit into a narrow
 
 ## Background
 
-Our robot uses the **[Kinematics Kit Kim](https://www.eduart-robotik.com/products/kinematicskit-kim)** by EduArt Robotik (maker of the Eduard robot) as its motor and drive electronics. In its canonical layout, the motor connectors stick out on the **sides** of the HAT. That is fine for most builds, but it costs width, and width is exactly what we do not have.
+Our robot uses the **Kinematics Kit** by EduArt Robotik in its Raspberry Pi HAT variant (as in the Eduard robot) as its motor and drive electronics. The same modules are available as the [Kinematics Kit Kim](https://www.eduart-robotik.com/products/kinematicskit-kim), which uses an Ethernet-only board instead of the Pi HAT. In its canonical layout, the motor connectors stick out on the **sides** of the HAT. That is fine for most builds, but it costs width, and width is exactly what we do not have.
 
 ## The problem
 
@@ -19,7 +19,7 @@ Our robot uses the **[Kinematics Kit Kim](https://www.eduart-robotik.com/product
 
 This board relocates the connectors of the HAT. Rotating the top part of the Kinematics Kit HAT by **90°** brings the motor connectors out of the side-protruding position, so the **entire Kinematics Kit fits fully inside our frame** while staying within the 30 cm width limit and the low profile we need.
 
-<img src="images/kim-stack-render.jpg" alt="3D render of the Kinematics Kit stack on a Raspberry Pi 5 with the PI5-HAT-relocator between the adapter board and the motor shields" width="600">
+<img src="images/kinematics-kit-stack-render.jpg" alt="3D render of the Kinematics Kit stack on a Raspberry Pi 5 with the PI5-HAT-relocator between the adapter board and the motor shields" width="600">
 
 *The stack on the Raspberry Pi 5: adapter board at the bottom, the relocator on top of it (the plain board without components), the motor shields rotated by 90° above, power management on top.*
 
@@ -62,4 +62,4 @@ KiCad 10.0.3, as of 2026-11-11:
 ## Credits
 
 Developed by DBG-Robots, Merlin Ortner (Dietrich-Bonhoeffer-Gymnasium Oberasbach).
-[Kinematics Kit Kim](https://www.eduart-robotik.com/products/kinematicskit-kim) by EduArt Robotik.
+Kinematics Kit by EduArt Robotik ([Kinematics Kit Kim](https://www.eduart-robotik.com/products/kinematicskit-kim) is the variant with an Ethernet board).
