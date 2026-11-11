@@ -8,7 +8,7 @@ Eine einfache, flache KiCad-Platine, mit der das Kinematics-Kit-HAT in einen sch
 
 ## Hintergrund
 
-Unser Roboter nutzt das **Kinematics Kit** von Eduard als Motor- und Antriebselektronik. Im Originallayout ragen die Motoranschlüsse **seitlich** aus dem HAT heraus. Für die meisten Aufbauten ist das unproblematisch, es kostet aber Breite, und genau die haben wir nicht.
+Unser Roboter nutzt das **[Kinematics Kit Kim](https://www.eduart-robotik.com/products/kinematicskit-kim)** von EduArt Robotik (Hersteller des Roboters Eduard) als Motor- und Antriebselektronik. Im Originallayout ragen die Motoranschlüsse **seitlich** aus dem HAT heraus. Für die meisten Aufbauten ist das unproblematisch, es kostet aber Breite, und genau die haben wir nicht.
 
 ## Das Problem
 
@@ -25,6 +25,25 @@ Die Platine ist bewusst einfach gehalten:
 - Kein Flachbandkabel, das hält den Aufbau niedrig und vermeidet zusätzlichen Platzbedarf und Verkabelung.
 - Beschriftung im Bestückungsdruck (VCC, GND, EN und Signalpaare) an jedem Anschluss für einfachen Aufbau und einfache Fehlersuche.
 
+## Pinbelegung
+
+Die Platine führt 16 Pins durch (8 zweipolige Leisten oben, 8 unten). Pro Motorkanal (1 und 2) sind das `CH`, `CL`, `EN`, `VCC1`, `VCC2` und dazu `GND`.
+
+Elektrisch gebraucht werden davon nur 6. Wir führen trotzdem alle 16 durch und bestücken alle Leisten:
+
+- Die Stiftleisten halten den gedrehten oberen Teil mechanisch fest. Ohne sie säße er nicht stabil.
+- Die Größe der Platine hängt an der Lage der Steckverbinder. Mit nur 6 Leitungen wäre sie weder kleiner noch billiger.
+- So bleibt die Platine auch nutzbar, falls später mehr Pins gebraucht werden.
+
+Leiterbahnen: Signale 0,2 mm, `VCC` 2,0 mm, `GND` als Fläche auf beiden Lagen.
+
+## Prüfung
+
+KiCad 10.0.3, Stand 11.11.2026:
+
+- **DRC:** keine Fehler, keine offenen Verbindungen. Nur Warnungen: Bestückungsdruck überlappt, Footprints weichen von der Bibliothek ab, und bei x 117 / y 52 mm liegen zwei Durchkontaktierungen übereinander (eine davon kann weg).
+- **ERC:** keine Meldungen.
+
 ## Dateien
 
 | Datei | Beschreibung |
@@ -37,4 +56,4 @@ Die Platine ist bewusst einfach gehalten:
 ## Credits
 
 Entwickelt von DBG-Robots, Merlin Ortner (Dietrich-Bonhoeffer-Gymnasium Oberasbach).
-Kinematics Kit von Eduard.
+[Kinematics Kit Kim](https://www.eduart-robotik.com/products/kinematicskit-kim) von EduArt Robotik.

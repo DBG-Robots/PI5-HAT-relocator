@@ -8,7 +8,7 @@ A simple, shallow KiCad board that lets the Kinematics Kit HAT fit into a narrow
 
 ## Background
 
-Our robot uses the **Kinematics Kit** by Eduard as its motor and drive electronics. In its canonical layout, the motor connectors stick out on the **sides** of the HAT. That is fine for most builds, but it costs width, and width is exactly what we do not have.
+Our robot uses the **[Kinematics Kit Kim](https://www.eduart-robotik.com/products/kinematicskit-kim)** by EduArt Robotik (maker of the Eduard robot) as its motor and drive electronics. In its canonical layout, the motor connectors stick out on the **sides** of the HAT. That is fine for most builds, but it costs width, and width is exactly what we do not have.
 
 ## The problem
 
@@ -25,6 +25,25 @@ The board is intentionally simple:
 - No ribbon cable, which keeps the stack low and avoids extra bulk and wiring.
 - Silkscreen labels (VCC, GND, EN and signal pairs) on every connector to make assembly and debugging easy.
 
+## Pinout
+
+The board passes through 16 pins (8 two-pin connectors on top, 8 on the bottom). Per motor channel (1 and 2) these are `CH`, `CL`, `EN`, `VCC1`, `VCC2`, plus `GND`.
+
+Only 6 of them are needed electrically. We still pass all 16 through and populate every connector:
+
+- The pin headers hold the rotated top part in place mechanically. Without them it would not sit firmly.
+- The board size is set by the connector positions. With only 6 traces it would be neither smaller nor cheaper.
+- The board stays usable if more pins are needed later.
+
+Traces: signals 0.2 mm, `VCC` 2.0 mm, `GND` as a pour on both layers.
+
+## Checks
+
+KiCad 10.0.3, as of 2026-11-11:
+
+- **DRC:** no errors, no unconnected pads. Warnings only: silkscreen overlaps, footprints differ from the library, and two vias are stacked at x 117 / y 52 mm (one can be removed).
+- **ERC:** no messages.
+
 ## Files
 
 | File | Description |
@@ -37,4 +56,4 @@ The board is intentionally simple:
 ## Credits
 
 Developed by DBG-Robots, Merlin Ortner (Dietrich-Bonhoeffer-Gymnasium Oberasbach).
-Kinematics Kit by Eduard.
+[Kinematics Kit Kim](https://www.eduart-robotik.com/products/kinematicskit-kim) by EduArt Robotik.
