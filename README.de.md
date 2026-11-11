@@ -19,6 +19,10 @@ Unser Roboter nutzt das **[Kinematics Kit Kim](https://www.eduart-robotik.com/pr
 
 Diese Platine verlegt die Anschlüsse des HATs. Indem der obere Teil des Kinematics-Kit-HATs um **90°** gedreht wird, liegen die Motoranschlüsse nicht mehr seitlich abstehend, sodass das **komplette Kinematics Kit vollständig in unseren Rahmen passt**, und zwar innerhalb des 30-cm-Breitenlimits und mit dem flachen Profil, das wir brauchen.
 
+<img src="images/kim-stack-render.jpg" alt="3D-Rendering des Kinematics-Kit-Stapels auf einem Raspberry Pi 5 mit dem PI5-HAT-relocator zwischen Adapterplatine und Motor-Shields" width="600">
+
+*Der Stapel auf dem Raspberry Pi 5: unten die Adapterplatine, darauf der Relocator (die glatte Platine ohne Bauteile), darüber um 90° gedreht die Motor-Shields, ganz oben das Power-Management.*
+
 Die Platine ist bewusst einfach gehalten:
 
 - **Buchsenleisten oben** und **Stiftleisten unten**, sodass sie zwischen Pi/HAT und dem gedrehten oberen Teil sitzt.
@@ -29,10 +33,12 @@ Die Platine ist bewusst einfach gehalten:
 
 Die Platine führt 16 Pins durch (8 zweipolige Leisten oben, 8 unten). Pro Motorkanal (1 und 2) sind das `CH`, `CL`, `EN`, `VCC1`, `VCC2` und dazu `GND`.
 
-Elektrisch gebraucht werden davon nur 6. Wir führen trotzdem alle 16 durch und bestücken alle Leisten:
+Elektrisch wichtig sind nur **4 der 8 Leisten**, darunter eine `VCC`-, eine `EN`- und eine CAN-Leiste (`CH`/`CL`). Das hat uns [snaens](https://github.com/snaens) bestätigt. Über `VCC` fließt nur der Strom für den Raspberry Pi, nicht der Motorstrom: Das Power-Management sitzt ganz oben im Stapel und reicht den Motorstrom nur bis zu den Motorcontrollern durch, nicht durch diese Platine.
+
+Wir führen trotzdem alle 16 Pins durch und bestücken alle Leisten:
 
 - Die Stiftleisten halten den gedrehten oberen Teil mechanisch fest. Ohne sie säße er nicht stabil.
-- Die Größe der Platine hängt an der Lage der Steckverbinder. Mit nur 6 Leitungen wäre sie weder kleiner noch billiger.
+- Die Größe der Platine hängt an der Lage der Steckverbinder. Mit weniger Leitungen wäre sie weder kleiner noch billiger.
 - So bleibt die Platine auch nutzbar, falls später mehr Pins gebraucht werden.
 
 Leiterbahnen: Signale 0,2 mm, `VCC` 2,0 mm, `GND` als Fläche auf beiden Lagen.

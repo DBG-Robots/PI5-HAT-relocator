@@ -19,6 +19,10 @@ Our robot uses the **[Kinematics Kit Kim](https://www.eduart-robotik.com/product
 
 This board relocates the connectors of the HAT. Rotating the top part of the Kinematics Kit HAT by **90°** brings the motor connectors out of the side-protruding position, so the **entire Kinematics Kit fits fully inside our frame** while staying within the 30 cm width limit and the low profile we need.
 
+<img src="images/kim-stack-render.jpg" alt="3D render of the Kinematics Kit stack on a Raspberry Pi 5 with the PI5-HAT-relocator between the adapter board and the motor shields" width="600">
+
+*The stack on the Raspberry Pi 5: adapter board at the bottom, the relocator on top of it (the plain board without components), the motor shields rotated by 90° above, power management on top.*
+
 The board is intentionally simple:
 
 - **Female connectors on top** and **male connectors on bottom**, so it sits between the Pi/HAT and the rotated top section.
@@ -29,10 +33,12 @@ The board is intentionally simple:
 
 The board passes through 16 pins (8 two-pin connectors on top, 8 on the bottom). Per motor channel (1 and 2) these are `CH`, `CL`, `EN`, `VCC1`, `VCC2`, plus `GND`.
 
-Only 6 of them are needed electrically. We still pass all 16 through and populate every connector:
+Only **4 of the 8 connectors** matter electrically, among them one `VCC`, one `EN` and one CAN connector (`CH`/`CL`). [snaens](https://github.com/snaens) confirmed this to us. `VCC` only carries the Raspberry Pi's current, not motor current: power management sits at the top of the stack and passes motor power down only as far as the motor controllers, not through this board.
+
+We still pass all 16 pins through and populate every connector:
 
 - The pin headers hold the rotated top part in place mechanically. Without them it would not sit firmly.
-- The board size is set by the connector positions. With only 6 traces it would be neither smaller nor cheaper.
+- The board size is set by the connector positions. With fewer traces it would be neither smaller nor cheaper.
 - The board stays usable if more pins are needed later.
 
 Traces: signals 0.2 mm, `VCC` 2.0 mm, `GND` as a pour on both layers.
